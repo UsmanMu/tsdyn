@@ -27,8 +27,8 @@ setar <- function(x, m, d=1, steps=d, series, mL, mH, thDelay=0, mTh, thVar, th,
   if(missing(series))
     series <- deparse(substitute(x))
 	str <- nlar.struct(x=x, m=m, d=d, steps=steps, series=series)
-	xx <- getXX(str)
-	yy <- getYY(str)
+	xx <- str$xx
+	yy <- str$yy
 	externThVar <- FALSE
 	if (missing(mL)) {
 		mL <- m
@@ -51,7 +51,7 @@ setar <- function(x, m, d=1, steps=d, series, mL, mH, thDelay=0, mTh, thVar, th,
 		dim(z) <- NULL
 	} else if(!missing(thVar)) {
 		if(length(thVar)>nrow(xx)) {
-			z <- thVar[1:nrow(xx)]
+			z <- thVar[seq_len(nrow(xx))]
 			if(trace) 
 				cat("Using only first", nrow(xx), "elements of thVar\n")
 		}
@@ -90,8 +90,8 @@ setar <- function(x, m, d=1, steps=d, series, mL, mH, thDelay=0, mTh, thVar, th,
 		return(res)
 	} else {	#else fit with the specified threshold
 		isL <- 0+(z <= th)		#regime-switching indicator variable
-		xxL <- cbind(1,xx[,1:mL])*isL
-		xxH <- cbind(1,xx[,1:mH])*(1-isL)
+		xxL <- cbind(1,xx[,seq_len(mL)])*isL
+		xxH <- cbind(1,xx[,seq_len(mH)])*(1-isL)
 		res <- lm.fit(cbind(xxL, xxH), yy)
 		res$coefficients <- c(res$coefficients, th)
 		names(res$coefficients) <- c(paste("phi1", 0:mL, sep="."), 
@@ -166,7 +166,7 @@ summary.setar <- function(object, ...) {
 	ans$fixedTh <- mod$fixedTh
 	ans$externThVar <- mod$externThVar
 	ans$lowRegProp <- mod$lowRegProp
-	n <- getNUsed(object$str)
+	n <- object$str$n.used
 	coef <- object$coef[-length(object$coef)]
 	p <- length(coef)
 	resvar <- mse(object)*n/(n-p)
@@ -212,13 +212,13 @@ plot.setar <- function(x, ask=interactive(), legend=FALSE, regSwStart, regSwStop
 	par(ask=ask)
 	NextMethod(ask=ask, ...)
 	str <- x$str
-	xx <- getXX(str)
-	yy <- getYY(str)
+	xx <- str$xx
+	yy <- str$yy
 	nms <- colnames(xx)
 	m <- str$m
 	d <- str$d
 	lags <- c((0:(m-1))*(-d), str$steps)
-	xxyy <- getXXYY(str)
+	xxyy <- cbind(xx,yy)	#construct design matrix
 	x.old <- x
 	x <- c(x, x$model.specific)
 	series <- str$x
