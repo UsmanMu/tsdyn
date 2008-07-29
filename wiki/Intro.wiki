@@ -1,6 +1,4 @@
-#intro, main features, docu and working papers
-
-== Introduction  ==
+== Actual features of version 0.6  ==
 
 TsDyn is a R package designed to modelling nonlinearitiies in time series. It entails following *nonlinear regression models*
 
@@ -30,4 +28,4 @@ at the R prompt.
 The next release will entail new models and nonlinearities tests, like an extension of the tar model to multivariate case, with also threshold cointegration estimation and tests, a bootstrap univariate and multivariate linearity test, and a flexible coefficient smooth transition regression models which also allows for linearity testing.
 
 ==Working papers==
-Working papers of the contributors are avalaible here. 
+[WorkingPapers] of the contributors are avalaible here. 
