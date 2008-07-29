@@ -1,0 +1,33 @@
+#intro, main features, docu and working papers
+
+== Introduction  ==
+
+TsDyn is a R package designed to modelling nonlinearitiies in time series. It entails following *nonlinear regression models*
+
+ * Smooth transition regression model (star)
+ * Logistic smooth transition regressions models (lstar)
+ * Threshold autoregressive models (setar and tar) 
+ * Neural Network nonlinear autoregressive model(nnet)
+ * Additive nonlinear autoregressive model (aar)
+
+It has also various *nonlinearity and independance tests* like:
+
+ * Casdagli test of nonlinearity via locally linear forecasts (llar)
+ * Generic NLAR linearity test (isLinear)
+
+And finally the usual methods implemented in R, especially a nice function to export to LateX format the regression output (see toLatex()). 
+
+
+==Documentation==
+A short guide is bundled, once installed type
+
+> vignette('tsDyn')
+
+at the R prompt. 
+
+== Next release 0.7 ==
+
+The next release will entail new models and nonlinearities tests, like an extension of the tar model to multivariate case, with also threshold cointegration estimation and tests, a bootstrap univariate and multivariate linearity test, and a flexible coefficient smooth transition regression models which also allows for linearity testing.
+
+==Working papers==
+Working papers of the contributors are avalaible here. 
