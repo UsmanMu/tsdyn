@@ -1,3 +1,6 @@
+#summary About tsDyn
+#labels Featured
+
 == Actual features of version 0.6  ==
 
 TsDyn is a R package designed to modelling nonlinearitiies in time series. It entails following *nonlinear regression models*
