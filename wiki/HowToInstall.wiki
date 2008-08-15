@@ -23,8 +23,8 @@ tsDyn *depends* on mgcv, Matrix, minpack.lm, rgenoud, *recquires* nnet, tseriesC
 
 {{{
 install.packages(c("mgcv", "Matrix", "minpack.lm", "rgenoud",
- "nnet", "tseriesChaos", "tseries", "utils",
- "tcltk", "sm", "scatterplot3d", "rgl"), dep=TRUE)
+ "nnet", "tseriesChaos", "tseries",
+ "sm", "scatterplot3d", "rgl"), dep=TRUE)
 }}}
 
 =Install tsDyn=
