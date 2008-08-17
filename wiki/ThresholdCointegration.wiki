@@ -1,4 +1,4 @@
-#labels Thresholdcointegrationfeatures
+#labels Thresholdcointegration
 #Threshold cointegration software package for R.
 
 = Introduction =
@@ -9,25 +9,35 @@ This page shows the features for threshold cointegration and threshold vector er
 = Functions =
  * Estimation of threshold vector error correction model (TVECM) by OLS (Seo 2007). Function *TVECM()*. 
 
- * Estimation of threshold vector error correction model TVECM) by MLE (Hansen and Seo). Function: *HanSeo_TVECM()*.
+ * Estimation of threshold vector error correction model (TVECM) by MLE (Hansen and Seo 2002). Function: *HanSeo_TVECM()*.
 
  * Estimation of threshold vector autoregressive model (TVAR) by OLS (Hansen and Seo 2002). Function: *TVAR()*. 
 
- * Estimation of linear VAR and VECM models. Function *linear2*. 
+ * Estimation of linear VAR and VECM models. Function *linear2()*. 
 
- * Linear vs threshold cointegration test of Hansen and Seo (2002). Contained in  *HanSeo_TVECM()*.
+ * Linear vs threshold cointegration test by Hansen and Seo (2002). Contained in  *HanSeo_TVECM()*.
 
- * No cointegration against threshold cointegration test of Seo (2006) Function *TVECM_SeoTest()*
+ * No cointegration against threshold cointegration test by Seo (2006). Function *TVECM_SeoTest()*
 
- * Linearity test of Hansen (1997) and its extension to multivariate case by Lo and Zivot (2002) Functions *setarTest()* and *TVAR_LRtest()*
+ * Linearity test by Hansen (1997) and its extension to multivariate case by Lo and Zivot (2002) Functions *setarTest()* and *TVAR_LRtest()*
 
  * Function to simulate and bootstrap TAR and TVAR. Functions *TAR_simul()* and *TVAR_simul()*
 
- * Simple Wald test for the coefficients. To be soon added. 
+ 
+==Raw functions==
+These functions are already written but not end-user ready (no help page and hence not exported). 
+ * Simple Wald test for the coefficients. 
+
+ * Heteroskedastic covariance matrix estimator
+
+ * Test of structural break in cointegration relationship by Gregory and Hansen (1996)
+
+==Under project==
+Some tests and functions could easily be implemented fromthe already written functions: threshold unit roots tests, inference for thresholds parameter. And VECM and TVECm simulation/bootstrap procedure.
 
 
 =Method implementation=
-Following the method oriented programming from R, class are written for the functions (currently TVAR, TVECM and linear2) and entails following methods:
+Following the method oriented programming from R, classes are written for the functions (currently TVAR, TVECM and linear2) and entails following methods:
  * print(),
  * fitted(), 
  * coef(), 
@@ -40,15 +50,19 @@ Following the method oriented programming from R, class are written for the func
  * and a nice toLatex() export function. 
 
 =References=
+Gregory, A. & Hansen, B. (1996), 'Test for cointegration in models with regime shifts', Oxford bulletin of economic and statistics 58(3), 555-560.
+
 Hansen, B. (1999), 'Testing for Linearity', Journal of economic Surveys 13(5), 551-576.
 
-Hansen, B. & Seo, B. (2002), 'Testing for two-regime threshold cointegration in vector error-correction models', Journal of Econometrics 110, 293 â€“ 318.
+Hansen, B. & Seo, B. (2002), 'Testing for two-regime threshold cointegration in vector error-correction models', Journal of Econometrics 110, 293 318.
 
 Lo, M. C. & Zivot, E. (2001), 'Threshold Cointegration and Nonlinear Adjustment to the Law of One Price', macroeconomic Dynamics 5, 533-576.
 
 Seo, B. (2007), 'Estimation of non linear error-correction models', Working Paper, 
 
 Seo, M. (2006), 'Bootstrap testing for the null of no cointegration in a threshold vector error correction model', Journal of Econometrics 127(1), 129-150.
+
+
 
 
 [Intro Back] to package description here.
