@@ -3,20 +3,20 @@
 
 == Actual features of version 0.6  ==
 
-TsDyn is a R package designed to modelling nonlinearitiies in time series. It entails following *nonlinear regression models*
+TsDyn is a R package designed to modeling nonlinearities in time series. It entails following *nonlinear regression models*:
 
- * Smooth transition regression model (_star_)
- * Logistic smooth transition regressions models (_lstar_)
- * Threshold autoregressive models (_setar_) 
- * Neural Network nonlinear autoregressive model(_nnet_)
- * Additive nonlinear autoregressive model (_aar_)
+ * Smooth transition regression model. Function *star()*
+ * Logistic smooth transition regressions models. *lstar()*
+ * Threshold autoregressive models *setar()*
+ * Neural Network nonlinear autoregressive model *nnet()*
+ * Additive nonlinear autoregressive model *aar()*
 
-It has also various *nonlinearity and independance tests* like:
+It has also various *nonlinearity and independence tests* like:
 
- * Casdagli test of nonlinearity via locally linear forecasts (_llar_)
- * Generic NLAR linearity test (_isLinear_)
+ * Casdagli test of nonlinearity via locally linear forecasts *llar()*
+ * Generic NLAR linearity test *isLinear()*
 
-And finally the usual methods implemented in R, especially a nice function to export to LateX format the regression output (see _toLatex()_). 
+And finally the usual methods implemented in R, especially a nice function to export to LateX format the regression output (see *toLatex()*).
 
 
 ==Documentation==
@@ -28,7 +28,7 @@ at the R prompt.
 
 == Next release 0.7 ==
 
-The next release will entail new models and nonlinearities tests, like an extension of the tar model to multivariate case, with also threshold cointegration estimation and tests, a bootstrap univariate and multivariate linearity test, and a flexible coefficient smooth transition regression models which also allows for linearity testing.
+The next release will entail new models and nonlinearities tests, like an extension of the TAR model to multivariate case TVAR, [ThresholdCointegration threshold cointegration] estimation and tests, a bootstrap univariate and multivariate linearity test, and a flexible coefficient smooth transition regression models which also allows for linearity testing.
 
 ==Working papers==
 Some [WorkingPapers working papers] of the contributors are avalaible here. 
