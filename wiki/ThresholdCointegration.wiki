@@ -5,7 +5,12 @@
 
 This page shows the features for threshold cointegration and threshold vector error correction model in package tsDyn. These functions will be released in the next version of package tsDyn, currently work is done on their correct class implementation but the functions can already be used. To see how to access and compile the unreleased working sources, see this [HowToInstall page]. For bugs and comments, please contact Matthieu _dot_ Stigler (at) "gmail dot com"
 
+= What is threshold cointegration? =
+Cointegration analysis is an indispensable tool/step for considering relationships between multivariate time series, when the variables are not stationary. If in the case of non-stationary variables, there exists a linear combination between these variables which is nevertheless stationary, the variables are said to be cointegrated (which means that they exhibit a common long-term relationship). The interest is that Engle and Granger (1987) have shown that in that case they can be represented in an error-correction model (VECM). 
 
+Threshold cointegration extends the usual linear cointegration to cases where the adjustment towards long-run equilibrium does not occur after each small deviation but more realistically only when the deviations exceed some critical thresholds, thus taking transaction costs and asymmetries in price transmission into account .
+
+Threshold cointegration can improve significantly the estimation and forecast accuracy and has been widely applied to study the relationship between interest rates, exchange rates, oil prices, international agricultural markets, and to test the purchasing power parity theory and the law of one price.
 = Functions =
  * Estimation of threshold vector error correction model (TVECM) by OLS (Seo 2007). Function *TVECM()*. 
 
@@ -15,11 +20,11 @@ This page shows the features for threshold cointegration and threshold vector er
 
  * Estimation of linear VAR and VECM models. Function *linear2()*. 
 
- * Linear vs threshold cointegration test by Hansen and Seo (2002). Contained in  *HanSeo_TVECM()*.
+ * Linear vs threshold cointegration test with bootstrap distribution by Hansen and Seo (2002). Contained in  *HanSeo_TVECM()*.
 
- * No cointegration against threshold cointegration test by Seo (2006). Function *TVECM_SeoTest()*
+ * No cointegration against threshold cointegration test with bootstrap distribution by Seo (2006). Function *TVECM_SeoTest()*
 
- * Linearity test by Hansen (1997) and its extension to multivariate case by Lo and Zivot (2002) Functions *setarTest()* and *TVAR_LRtest()*
+ * Linearity test with bootstrap distribution by Hansen (1997) and its extension to multivariate case by Lo and Zivot (2002) Functions *setarTest()* and *TVAR_LRtest()*
 
  * Function to simulate and bootstrap TAR and TVAR. Functions *TAR_simul()* and *TVAR_simul()*
 
@@ -33,7 +38,7 @@ These functions are already written but not end-user ready (no help page and hen
  * Test of structural break in cointegration relationship by Gregory and Hansen (1996)
 
 ==Under project==
-Some tests and functions could easily be implemented fromthe already written functions: threshold unit roots tests, inference for thresholds parameter. And VECM and TVECm simulation/bootstrap procedure.
+Some tests and functions could easily be implemented from<the already written functions: threshold unit roots tests, inference for thresholds parameter. And VECM and TVECm simulation/bootstrap procedure. Impulse response function are also under project. 
 
 
 =Method implementation=
