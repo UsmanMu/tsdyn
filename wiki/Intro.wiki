@@ -28,7 +28,12 @@ at the R prompt.
 
 == Next release 0.7 ==
 
-The next release will entail new models and nonlinearities tests, like an extension of the TAR model to multivariate case TVAR, [ThresholdCointegration threshold cointegration] estimation and tests, a bootstrap univariate and multivariate linearity test, and a flexible coefficient smooth transition regression models which also allows for linearity testing.
+The next release will entail new models and nonlinearities tests:
+ * The extension of the treshold autoregressive model setar() for two threshold and MTAR adjustment
+ * The extension of the TAR model to multivariate case TVAR,
+ * A bootstrap univariate and multivariate linearity test against TAR or TVAR
+ * A bunch of threshold cointegration estimation and tests procedures, see dedicated page: [ThresholdCointegration threshold cointegration]
+ * A flexible coefficient smooth transition regression model which also allows for linearity testing.
 
 ==Working papers==
 Some [WorkingPapers working papers] of the contributors are avalaible here. 
