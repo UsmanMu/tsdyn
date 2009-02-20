@@ -11,10 +11,22 @@ Cointegration analysis is an indispensable tool/step for considering relationshi
 Threshold cointegration extends the usual linear cointegration to cases where the adjustment towards long-run equilibrium does not occur after each small deviation but more realistically only when the deviations exceed some critical thresholds, thus taking transaction costs and asymmetries in price transmission into account .
 
 Threshold cointegration can improve significantly the estimation and forecast accuracy and has been widely applied to study the relationship between interest rates, exchange rates, oil prices, international agricultural markets, and to test the purchasing power parity theory and the law of one price.
-= Functions =
- * Estimation of threshold vector error correction model (TVECM) by OLS (Seo 2007). Function *TVECM()*. 
+= Features =
 
- * Estimation of threshold vector error correction model (TVECM) by MLE (Hansen and Seo 2002). Function: *HanSeo_TVECM()*.
+== Long-run relationship analysis ==
+ * Estimation of TAR, SETAR and MTAR models with OLS, AIC and pooled AIC. Two or three regimes are available, intercept and/or trends can be added in each regime or be common to the system, possibility of differents lags in each regime. Function *setar()*
+
+ * Unit root tests with stationary SETAR as alternative. *BBCTest()* and *KapShinTest()*
+
+ * Linearity tests against SETAR. Test of Hansen (2001) *setarTest()* with bootstrap replications and test on arranged autoregression of Tsay (1989): *TsayTest()*
+
+ * Simulating or bootstraping a SETAR: *TAR_simul()*
+
+== Threshold Error correction Model (TVECM)==
+
+ * Estimation of TVECM by OLS (Seo 2007). Function *TVECM()*. 
+
+ * Estimation of TVECM by MLE (Hansen and Seo 2002). Function: *HanSeo_TVECM()*.
 
  * Estimation of threshold vector autoregressive model (TVAR) by OLS (Hansen and Seo 2002). Function: *TVAR()*. 
 
@@ -24,9 +36,9 @@ Threshold cointegration can improve significantly the estimation and forecast ac
 
  * No cointegration against threshold cointegration test with bootstrap distribution by Seo (2006). Function *TVECM_SeoTest()*
 
- * Linearity test with bootstrap distribution by Hansen (1997) and its extension to multivariate case by Lo and Zivot (2002) Functions *setarTest()* and *TVAR_LRtest()*
+ * Linearity test with bootstrap distribution by Hansen (1997) extended to multivariate case TVAR as in Lo and Zivot (2002): *TVAR_LRtest()*
 
- * Function to simulate and bootstrap TAR and TVAR. Functions *TAR_simul()* and *TVAR_simul()*
+ * Function to simulate and bootstrap TVAR: *TVAR_simul()*
 
  
 ==Raw functions==
@@ -55,17 +67,24 @@ Following the method oriented programming from R, classes are written for the fu
  * and a nice toLatex() export function. 
 
 =References=
+Bec, F.; Salem, M. B. & Carrasco, M. (2004), 'Tests for Unit-Root versus Threshold Specification With an Application to the Purchasing Power Parity Relationship', Journal of Business & Economic Statistics 22, 382-395.
+
 Gregory, A. & Hansen, B. (1996), 'Test for cointegration in models with regime shifts', Oxford bulletin of economic and statistics 58(3), 555-560.
 
 Hansen, B. (1999), 'Testing for Linearity', Journal of economic Surveys 13(5), 551-576.
 
 Hansen, B. & Seo, B. (2002), 'Testing for two-regime threshold cointegration in vector error-correction models', Journal of Econometrics 110, 293 318.
 
+Kapetanios, G. & Shin, Y. (2006), 'Unit root tests in three-regime SETAR models', Econometrics Journal 9(2), 252-278.
+
 Lo, M. C. & Zivot, E. (2001), 'Threshold Cointegration and Nonlinear Adjustment to the Law of One Price', macroeconomic Dynamics 5, 533-576.
 
 Seo, B. (2007), 'Estimation of non linear error-correction models', Working Paper, 
 
 Seo, M. (2006), 'Bootstrap testing for the null of no cointegration in a threshold vector error correction model', Journal of Econometrics 127(1), 129-150.
+
+Tsay, R. S. (1989), 'Testing and Modeling Threshold Autoregressive Processes', Journal of the American Statistical Association 84(405), 231--240.
+
 
 
 
