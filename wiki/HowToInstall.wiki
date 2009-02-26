@@ -27,6 +27,8 @@ install.packages(c("mgcv", "Matrix", "minpack.lm", "rgenoud",
  "sm", "scatterplot3d", "rgl"), dep=TRUE)
 }}}
 
+Some of those packages may be difficult to install as they have complicated dependencies. On debian-based distributions, they can be installed easier by:
+{{{sudo apt-get install r-cran-rgl}}}
 =Install tsDyn=
 Now you have the required external packages installed, as well as tsDyn sources. To make it loadable in R, you have to go to the download directory ({{{cd tsdyn-read-only}}}) and enter:
 
