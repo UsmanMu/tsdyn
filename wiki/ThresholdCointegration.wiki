@@ -1,9 +1,12 @@
 #labels Thresholdcointegration
-#Threshold cointegration software package for R.
+#tsDyn: a Threshold cointegration software package for R.
 
 = Introduction =
 
 This page shows the features for threshold cointegration and threshold vector error correction model in package tsDyn. These functions will be released in the next version of package tsDyn, currently work is done on their correct class implementation but the functions can already be used. To see how to access and compile the unreleased working sources, see this [HowToInstall page]. For bugs and comments, please contact Matthieu _dot_ Stigler (at) "gmail dot com"
+
+= Working paper/vignette =
+A working paper offering an overview of thresholod cointegration and presenting the functions implemented is available: [http://groups.google.com/group/tsdyn/web/ThCointOverview.pdf Threshold Cointegration: overview and implementation in R]
 
 = What is threshold cointegration? =
 Cointegration analysis is an indispensable tool/step for considering relationships between multivariate time series, when the variables are not stationary. If in the case of non-stationary variables, there exists a linear combination between these variables which is nevertheless stationary, the variables are said to be cointegrated (which means that they exhibit a common long-term relationship). The interest is that Engle and Granger (1987) have shown that in that case they can be represented in an error-correction model (VECM). 
@@ -18,27 +21,27 @@ Threshold cointegration can improve significantly the estimation and forecast ac
 
  * Unit root tests with stationary SETAR as alternative. *BBCTest()* and *KapShinTest()*
 
- * Linearity tests against SETAR. Test of Hansen (2001) *setarTest()* with bootstrap replications and test on arranged autoregression of Tsay (1989): *TsayTest()*
+ * Linearity tests against SETAR. Test of Hansen (2001) *setarTest()* with bootstrap replications (and a test on arranged autoregression of Tsay (1989): *TsayTest()*, still not included)
 
- * Simulating or bootstraping a SETAR: *TAR_simul()*
+ * Simulating or bootstraping a SETAR: *setar.sim()*
 
 == Threshold Error correction Model (TVECM)==
 
  * Estimation of TVECM by OLS (Seo 2007). Function *TVECM()*. 
 
- * Estimation of TVECM by MLE (Hansen and Seo 2002). Function: *HanSeo_TVECM()*.
+ * Estimation of TVECM by MLE (Hansen and Seo 2002). Function: *tsDyn:::HanSeo_TVECM()*.
 
  * Estimation of threshold vector autoregressive model (TVAR) by OLS (Hansen and Seo 2002). Function: *TVAR()*. 
 
- * Estimation of linear VAR and VECM models. Function *linear2()*. 
+ * Estimation of linear VAR and VECM models. Function *lineVar()*. 
 
- * Linear vs threshold cointegration test with bootstrap distribution by Hansen and Seo (2002). Contained in  *HanSeo_TVECM()*.
+ * Linear vs threshold cointegration test with bootstrap distribution by Hansen and Seo (2002). Contained in  *tsDyn:::HanSeo_TVECM()*.
 
- * No cointegration against threshold cointegration test with bootstrap distribution by Seo (2006). Function *TVECM_SeoTest()*
+ * No cointegration against threshold cointegration test with bootstrap distribution by Seo (2006). Function *TVECM.SeoTest()*
 
- * Linearity test with bootstrap distribution by Hansen (1997) extended to multivariate case TVAR as in Lo and Zivot (2002): *TVAR_LRtest()*
+ * Linearity test with bootstrap distribution by Hansen (1997) extended to multivariate case TVAR as in Lo and Zivot (2002): *TVAR.LRtest()*
 
- * Function to simulate and bootstrap TVAR: *TVAR_simul()*
+ * Function to simulate and bootstrap TVAR: *TVAR.sim()* and a TVECM: *TVECM.sim()*
 
  
 ==Raw functions==
